@@ -11,15 +11,13 @@ int secondsToRemoveOccurrences(std::string s)
         {
             if (s[i] == '0' && s[i+1] == '1')
             {
-                s[i] = '1';
-                s[i+1] = '0';
+                std::swap(s[i], s[i+1]);
                 flag = true;
                 ++i;
             }
         }
 
-        if (flag)
-            result++;
+        result += flag;
     }
 
     return result;
