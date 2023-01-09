@@ -2,10 +2,9 @@ std::string addBinary(std::string a, std::string b)
 {
     std::string result;
 
+    int sum = 0;
     short i = a.length() - 1;
     short j = b.length() - 1;
-
-    int sum = 0;
 
     for ( ; i >= 0 || j >= 0 || sum; --i, --j)
     {
