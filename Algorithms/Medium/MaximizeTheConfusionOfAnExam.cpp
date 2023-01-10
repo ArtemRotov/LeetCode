@@ -15,9 +15,10 @@ public:
     int maxConsecutiveAnswers(std::string answerKey, int k)
     {
         int len = answerKey.length();
-        int left = 0;
-        int res = 0;
+        
         int cnt = 0;
+        int left = 0;
+        int result = 0;
 
         // maximum substring of 'T' which contains k 'F'
         for(int i = 0; i < len; i++)
@@ -30,7 +31,7 @@ public:
                 left++;
             }
 
-            res = std::max(i - left + 1, res);
+            result = std::max(i - left + 1, result);
         }
 
         // maximum  substring of 'F' which contains k 'T'
@@ -46,8 +47,8 @@ public:
                 left++;
             }
 
-            res = std::max(i - left + 1,res);
+            result = std::max(i - left + 1,result);
         }
-        return res;
+        return result;
     }
 };
