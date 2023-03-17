@@ -9,20 +9,14 @@ An integer n is a power of three, if there exists an integer x such that n == 3^
 class Solution {
 public:
     bool isPowerOfThree(int n) 
-    {
+    {        
+	if (n <= 0) return false;
         
-        //return n > 0 && ((int)pow(3,19) % n == 0);
-        
-        if (n == 0) return false;
-        
-        while (n)
+        while (n % 3 == 0)
         {
-            if (n % 3 != 0 && n != 1)
-                return false;
-            
             n = n / 3;
         }
 
-        return true;
+        return n == 1;
     }
 };
